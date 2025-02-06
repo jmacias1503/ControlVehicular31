@@ -16,4 +16,6 @@
   print("TipoPago: ".$TipoPago."<br>");
   print("FechayHora: ".$FechayHora."<br>");
   print("CodigoBarras: ".$CodigoBarras."<br>");
+  $SQL = "INSERT INTO pagos(id, transaccion, folio, fechaLimPago, Importe, TipoPago, FechayHora, CodigoBarras) VALUES('$id', '$transaccion', '$folio', '$fechaLimPago', '$Importe', '$TipoPago', '$FechayHora', '$CodigoBarras');";
+  print($SQL);
 ?>
