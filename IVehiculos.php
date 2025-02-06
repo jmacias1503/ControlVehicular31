@@ -22,4 +22,8 @@
     print("NumCilindros: ".$NumCilindros."<br>");
     print("Modelo: ".$Modelo."<br>");
     print("Marca: ".$Marca."<br>");
+
+    $SQL = "INSERT INTO vehiculos VALUES('$IdSerie','$FolioCirculacion','$IdPropietario','$Color','$Ano','$Clase','$Combustible','$NIV','$NumCilindros','$Modelo','$Marca');";
+
+    print($SQL);
 ?>

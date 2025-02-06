@@ -6,4 +6,7 @@
     print("Compuesta: ".$compuesta."<br>");
     print("CURP: ".$CURP."<br>");
     print("IdDomicilio: ".$IdDomicilio."<br>");
+
+    $SQL = "INSERT INTO caso_domicilios VALUES('$compuesta','$CURP','$IdDomicilio');";
+    print($SQL);    
 ?>

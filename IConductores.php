@@ -4,4 +4,7 @@
 
     print("IdConductor: ".$idConductor."<br>");
     print("CURP: ".$CURP."<br>");
+
+    $SQL = "INSERT INTO conductores VALUES('$idConductor','$CURP');";
+    print($SQL);
 ?>

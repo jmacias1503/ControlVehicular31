@@ -14,4 +14,9 @@
     print("FechaNac: ".$FechaNac."<br>");
     print("Sexo: ".$Sexo."<br>");
     print("Firma: ".$Firma."<br>");
+
+    //Formar instruccion sql
+
+    $SQL = "INSERT INTO personas VALUES('$CURP','$Nombre','$ApellidoP','$ApellidoM','$FechaNac','$Sexo','$Firma');"; 
+    print($SQL);
 ?>

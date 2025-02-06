@@ -26,4 +26,8 @@
     print("OficinaExpendidora: ".$OficinaExpendidora."<br>");
     print("Movimiento: ".$Movimiento."<br>");
     print("Vigencia: ".$Vigencia."<br>");
+    
+    $SQL = "INSERT INTO tarjetas_circulacion VALUES('$FolioCirculacion','$IdPago','$NumConstancia','$Origen','$CveVehicular','$Tipo','$Uso','$RPA','$Operacion','$PlacaAnt','$OficinaExpendidora','$Movimiento','$Vigencia');";
+    print($SQL);
+    
 ?>

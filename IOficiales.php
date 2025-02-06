@@ -6,4 +6,7 @@
     print("Id: ".$id."<br>");
     print("NumeroPlaca: ".$numero_placa."<br>");
     print("CURP: ".$curp."<br>");
+
+    $SQL = "INSERT INTO oficiales VALUES('$id','$numero_placa','$curp');";
+    print($SQL);  
 ?>
