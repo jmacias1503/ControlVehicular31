@@ -22,4 +22,6 @@
   print("IdCentro: ".$IdCentro."<br>");
   print("IdSerie: ".$IdSerie."<br>");
   print("IdPago: ".$IdPago."<br>");
+  $SQL = "INSERT INTO tarjetas_verificacion(FolioVerificacion, HoraSalida, MotivoVerificacion, FolioCertificado, Semestre, TipoServicio, FechaExp, HoraEntrada, IdCentro, IdSerie, IdPago) VALUES('$FolioVerificacion', '$HoraSalida', '$MotivoVerificacion', '$FolioCertificado', '$Semestre', '$TipoServicio', '$FechaExp', '$HoraEntrada', '$IdCentro', '$IdSerie', '$IdPago');";
+  print($SQL);
 ?>

@@ -16,4 +16,7 @@
   print("Ciudad: ".$Ciudad."<br>");
   print("Colonia: ".$Colonia."<br>");
   print("Calle: ".$Calle."<br>");
+
+  $SQL = "INSERT INTO domicilios(IdDomicilio, NumInt, NumExt, CP, Estado, Ciudad, Colonia, Calle) VALUES('$IdDomicilio', '$NumInt', '$NumExt', '$CP', '$Estado', '$Ciudad', '$Colonia', '$Calle');";
+  print($SQL);
 ?>

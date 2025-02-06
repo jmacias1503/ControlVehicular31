@@ -28,4 +28,7 @@
   print("Descripcion: ".$Descripcion."<br>");
   print("Tipo: ".$Tipo."<br>");
   print("FechaHora: ".$FechaHora."<br>");
+  $SQL = "INSERT INTO multas(FolioMultas, IdPago, FolioVerificacion, FolioCirculacion, IdSerie, IdOficial, Causa, Observaciones, Region, FechaExp, Estado, Descripcion, Tipo, FechaHora) VALUES('$FolioMultas', '$IdPago', '$FolioVerificacion', '$FolioCirculacion', '$IdSerie', '$IdOficial', '$Causa', '$Observaciones', '$Region', '$FechaExp', '$Estado', '$Descripcion', '$Tipo', '$FechaHora');";
+  print($SQL);
+?>
 ?>
