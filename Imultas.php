@@ -31,4 +31,3 @@
   $SQL = "INSERT INTO multas(FolioMultas, IdPago, FolioVerificacion, FolioCirculacion, IdSerie, IdOficial, Causa, Observaciones, Region, FechaExp, Estado, Descripcion, Tipo, FechaHora) VALUES('$FolioMultas', '$IdPago', '$FolioVerificacion', '$FolioCirculacion', '$IdSerie', '$IdOficial', '$Causa', '$Observaciones', '$Region', '$FechaExp', '$Estado', '$Descripcion', '$Tipo', '$FechaHora');";
   print($SQL);
 ?>
-?>
