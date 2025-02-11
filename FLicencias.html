@@ -3,21 +3,21 @@
     <label>Licencias</label>
     <form method="POST" action="/DSI31/ILicencias.php">
         <label>IdLicencia</label>
-        <input type = "number" name="IdLicencia" id="IdLicencia">
+        <input type = "number" name="IdLicencia" id="IdLicencia" required="required" maxlength="20">
         <label>ValidoHasta</label>
-        <input type = "date" name="ValidoHasta" id="ValidoHasta">
+        <input type = "date" name="ValidoHasta" id="ValidoHasta" required="required">
         <label>Antiguedad</label>
-        <input type = "text" name = "Antiguedad" id = "Antiguedad">
+        <input type = "text" name = "Antiguedad" id = "Antiguedad" required="required" maxlength="11">
         <label>Restriccion</label>
-        <input type ="text" name="Restriccion" id = "Restriccion">
+        <input type ="text" name="Restriccion" id = "Restriccion" required="required" maxlength="50">
         <label>NumEmergencia</label>
-        <input type="text" name = "NumEmergencia" id = "NumEmergencia">
+        <input type="text" name = "NumEmergencia" id = "NumEmergencia" required="required" maxlength="15">
         <label>DonadorOrganos</label>
-        <input type="text" name = "DonadorOrganos"  id = "DonadorOrganos">
+        <input type="text" name = "DonadorOrganos"  id = "DonadorOrganos" required="required" maxlength="2">
         <label>FechaExp</label>
         <input type = "date" name="FechaExp" id = "FechaExp">
         <label>IdConductor</label>
-        <input type="number" name="IdConductor" id = "IdConductor">
+        <input type="number" name="IdConductor" id = "IdConductor" required="required" maxlength="11">
         <input type = "submit">
     </form>
 
