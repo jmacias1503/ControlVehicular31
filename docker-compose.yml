@@ -14,7 +14,6 @@ services:
     networks:
       - app-network
 
-  # Servicio de Apache
   web:
     build: ./apache
     container_name: apache_container
