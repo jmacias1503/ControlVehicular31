@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: sistemas-internet31
+      MYSQL_DATABASE: controlvehicular
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app-network
+
+  # Servicio de Apache
+  web:
+    build: ./apache
+    container_name: apache_container
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+# Red para conectar los contenedores
+networks:
+  app-network:
+    driver: bridge
