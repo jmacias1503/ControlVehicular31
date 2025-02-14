@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS controlvehicular31;
-USE DATABASE controlvehicular31;
+USE controlvehicular31;
 
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
