@@ -12,7 +12,7 @@
     $OficinaExpendidora = $_REQUEST['OficinaExpendidora'];
     $Movimiento = $_REQUEST['Movimiento'];
     $Vigencia = $_REQUEST['Vigencia'];
-
+    /*
     print("FolioCirculacion: ".$FolioCirculacion."<br>");
     print("IdPago: ".$IdPago."<br>");
     print("NumConstancia: ".$NumConstancia."<br>");
@@ -26,8 +26,24 @@
     print("OficinaExpendidora: ".$OficinaExpendidora."<br>");
     print("Movimiento: ".$Movimiento."<br>");
     print("Vigencia: ".$Vigencia."<br>");
-    
+    */
     $SQL = "INSERT INTO tarjetas_circulacion VALUES('$FolioCirculacion','$IdPago','$NumConstancia','$Origen','$CveVehicular','$Tipo','$Uso','$RPA','$Operacion','$PlacaAnt','$OficinaExpendidora','$Movimiento','$Vigencia');";
-    print($SQL);
+    //print($SQL);
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "controlvehicular31";
+
+    $conn = new mysqli($servername, $username, $password, $dbname); // Create connection
+
+    $ResultSet = mysqli_query($conn, $SQL); // Execute the query
+    mysqli_close($conn); // Close the connection
+    if($ResultSet == 1){
+        print("Actualizado correctamente"); //Process the result
+    }
+    else{
+        print("Error al actualizar".$ResultSet->error);
+    }
     
 ?>
