@@ -11,17 +11,23 @@
   $IdSerie = $_GET['IdSerie'];
   $IdPago = $_GET['IdPago'];
 
-  print("FolioVerificacion: ".$FolioVerificacion."<br>");
-  print("HoraSalida: ".$HoraSalida."<br>");
-  print("MotivoVerificacion: ".$MotivoVerificacion."<br>");
-  print("FolioCertificado: ".$FolioCertificado."<br>");
-  print("Semestre: ".$Semestre."<br>");
-  print("TipoServicio: ".$TipoServicio."<br>");
-  print("FechaExp: ".$FechaExp."<br>");
-  print("HoraEntrada: ".$HoraEntrada."<br>");
-  print("IdCentro: ".$IdCentro."<br>");
-  print("IdSerie: ".$IdSerie."<br>");
-  print("IdPago: ".$IdPago."<br>");
   $SQL = "INSERT INTO tarjetas_verificacion(FolioVerificacion, HoraSalida, MotivoVerificacion, FolioCertificado, Semestre, TipoServicio, FechaExp, HoraEntrada, IdCentro, IdSerie, IdPago) VALUES('$FolioVerificacion', '$HoraSalida', '$MotivoVerificacion', '$FolioCertificado', '$Semestre', '$TipoServicio', '$FechaExp', '$HoraEntrada', '$IdCentro', '$IdSerie', '$IdPago');";
-  print($SQL);
+  $host = "localhost";
+  $username = "root";
+  $password = "";
+  $database = "controlvehicular31";
+
+  $conn = mysqli_connect($host, $username, $password, $database);
+
+  if ($conn == 0) {
+    print("No se pudo conectar a la base de datos");
+  }
+  $resultSet = mysqli_query($SQL);
+  mysqli_close($conn);
+  if ($resultSet == 1){
+    print("Consulta realizada correctamente");
+  }
+  else{
+    print("Error al ejecutar la consulta: ".$resultSet->error);
+  }
 ?>

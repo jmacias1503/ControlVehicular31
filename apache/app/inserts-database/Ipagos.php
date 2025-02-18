@@ -8,14 +8,23 @@
   $FechayHora = $_POST['FechayHora'];
   $CodigoBarras = $_POST['CodigoBarras'];
 
-  print("id: ".$id."<br>");
-  print("transaccion: ".$transaccion."<br>");
-  print("folio: ".$folio."<br>");
-  print("fechaLimPago: ".$fechaLimPago."<br>");
-  print("Importe: ".$Importe."<br>");
-  print("TipoPago: ".$TipoPago."<br>");
-  print("FechayHora: ".$FechayHora."<br>");
-  print("CodigoBarras: ".$CodigoBarras."<br>");
   $SQL = "INSERT INTO pagos(id, transaccion, folio, fechaLimPago, Importe, TipoPago, FechayHora, CodigoBarras) VALUES('$id', '$transaccion', '$folio', '$fechaLimPago', '$Importe', '$TipoPago', '$FechayHora', '$CodigoBarras');";
-  print($SQL);
+  $host = "localhost";
+  $username = "root";
+  $password = "";
+  $database = "controlvehicular31";
+
+  $conn = mysqli_connect($host, $username, $password, $database);
+
+  if ($conn == 0) {
+    print("No se pudo conectar a la base de datos");
+  }
+  $resultSet = mysqli_query($SQL);
+  mysqli_close($conn);
+  if ($resultSet == 1){
+    print("Consulta realizada correctamente");
+  }
+  else{
+    print("Error al ejecutar la consulta: ".$resultSet->error);
+  }
 ?>

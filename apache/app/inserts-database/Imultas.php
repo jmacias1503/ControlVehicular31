@@ -14,20 +14,23 @@
   $Tipo = $_REQUEST['Tipo'];
   $FechaHora = $_REQUEST['FechaHora'];
 
-  print("FolioMultas: ".$FolioMultas."<br>");
-  print("IdPago: ".$IdPago."<br>");
-  print("FolioVerificacion: ".$FolioVerificacion."<br>");
-  print("FolioCirculacion: ".$FolioCirculacion."<br>");
-  print("IdSerie: ".$IdSerie."<br>");
-  print("IdOficial: ".$IdOficial."<br>");
-  print("Causa: ".$Causa."<br>");
-  print("Observaciones: ".$Observaciones."<br>");
-  print("Region: ".$Region."<br>");
-  print("FechaExp: ".$FechaExp."<br>");
-  print("Estado: ".$Estado."<br>");
-  print("Descripcion: ".$Descripcion."<br>");
-  print("Tipo: ".$Tipo."<br>");
-  print("FechaHora: ".$FechaHora."<br>");
   $SQL = "INSERT INTO multas(FolioMultas, IdPago, FolioVerificacion, FolioCirculacion, IdSerie, IdOficial, Causa, Observaciones, Region, FechaExp, Estado, Descripcion, Tipo, FechaHora) VALUES('$FolioMultas', '$IdPago', '$FolioVerificacion', '$FolioCirculacion', '$IdSerie', '$IdOficial', '$Causa', '$Observaciones', '$Region', '$FechaExp', '$Estado', '$Descripcion', '$Tipo', '$FechaHora');";
-  print($SQL);
+  $host = "localhost";
+  $username = "root";
+  $password = "";
+  $database = "controlvehicular31";
+
+  $conn = mysqli_connect($host, $username, $password, $database);
+
+  if ($conn == 0) {
+    print("No se pudo conectar a la base de datos");
+  }
+  $resultSet = mysqli_query($SQL);
+  mysqli_close($conn);
+  if ($resultSet == 1){
+    print("Consulta realizada correctamente");
+  }
+  else{
+    print("Error al ejecutar la consulta: ".$resultSet->error);
+  }
 ?>

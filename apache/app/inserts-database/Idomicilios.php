@@ -8,15 +8,23 @@
   $Colonia = $_GET['Colonia'];
   $Calle = $_GET['Calle'];
 
-  print("IdDomicilio: ".$IdDomicilio."<br>");
-  print("NumInt: ".$NumInt."<br>");
-  print("NumExt: ".$NumExt."<br>");
-  print("CP: ".$CP."<br>");
-  print("Estado: ".$Estado."<br>");
-  print("Ciudad: ".$Ciudad."<br>");
-  print("Colonia: ".$Colonia."<br>");
-  print("Calle: ".$Calle."<br>");
-
   $SQL = "INSERT INTO domicilios(IdDomicilio, NumInt, NumExt, CP, Estado, Ciudad, Colonia, Calle) VALUES('$IdDomicilio', '$NumInt', '$NumExt', '$CP', '$Estado', '$Ciudad', '$Colonia', '$Calle');";
-  print($SQL);
+  $host = "localhost";
+  $username = "root";
+  $password = "";
+  $database = "controlvehicular31";
+
+  $conn = mysqli_connect($host, $username, $password, $database);
+
+  if ($conn == 0) {
+    print("No se pudo conectar a la base de datos");
+  }
+  $resultSet = mysqli_query($SQL);
+  mysqli_close($conn);
+  if ($resultSet == 1){
+    print("Consulta realizada correctamente");
+  }
+  else{
+    print("Error al ejecutar la consulta: ".$resultSet->error);
+  }
 ?>
