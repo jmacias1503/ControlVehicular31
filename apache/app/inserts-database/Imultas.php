@@ -17,7 +17,7 @@
   $SQL = "INSERT INTO multas(FolioMultas, IdPago, FolioVerificacion, FolioCirculacion, IdSerie, IdOficial, Causa, Observaciones, Region, FechaExp, Estado, Descripcion, Tipo, FechaHora) VALUES('$FolioMultas', '$IdPago', '$FolioVerificacion', '$FolioCirculacion', '$IdSerie', '$IdOficial', '$Causa', '$Observaciones', '$Region', '$FechaExp', '$Estado', '$Descripcion', '$Tipo', '$FechaHora');";
   $host = "localhost";
   $username = "root";
-  $password = "";
+  $password = "sistemas-internet31";
   $database = "controlvehicular31";
 
   $conn = mysqli_connect($host, $username, $password, $database);

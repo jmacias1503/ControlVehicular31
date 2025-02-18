@@ -5,7 +5,7 @@
   $SQL = "INSERT INTO propietarios(IdPropietario, CURP) VALUES('$IdPropietario', '$CURP');";
   $host = "localhost";
   $username = "root";
-  $password = "";
+  $password = "sistemas-internet31";
   $database = "controlvehicular31";
 
   $conn = mysqli_connect($host, $username, $password, $database);

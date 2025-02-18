@@ -32,7 +32,7 @@
 
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $password = "sistemas-internet31";
     $dbname = "controlvehicular31";
 
     $conn = new mysqli($servername, $username, $password, $dbname); // Create connection

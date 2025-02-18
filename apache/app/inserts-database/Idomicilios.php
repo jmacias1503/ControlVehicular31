@@ -11,7 +11,7 @@
   $SQL = "INSERT INTO domicilios(IdDomicilio, NumInt, NumExt, CP, Estado, Ciudad, Colonia, Calle) VALUES('$IdDomicilio', '$NumInt', '$NumExt', '$CP', '$Estado', '$Ciudad', '$Colonia', '$Calle');";
   $host = "localhost";
   $username = "root";
-  $password = "";
+  $password = "sistemas-internet31";
   $database = "controlvehicular31";
 
   $conn = mysqli_connect($host, $username, $password, $database);

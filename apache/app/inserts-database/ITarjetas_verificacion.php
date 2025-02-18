@@ -14,7 +14,7 @@
   $SQL = "INSERT INTO tarjetas_verificacion(FolioVerificacion, HoraSalida, MotivoVerificacion, FolioCertificado, Semestre, TipoServicio, FechaExp, HoraEntrada, IdCentro, IdSerie, IdPago) VALUES('$FolioVerificacion', '$HoraSalida', '$MotivoVerificacion', '$FolioCertificado', '$Semestre', '$TipoServicio', '$FechaExp', '$HoraEntrada', '$IdCentro', '$IdSerie', '$IdPago');";
   $host = "localhost";
   $username = "root";
-  $password = "";
+  $password = "sistemas-internet31";
   $database = "controlvehicular31";
 
   $conn = mysqli_connect($host, $username, $password, $database);

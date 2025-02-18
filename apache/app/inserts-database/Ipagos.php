@@ -11,7 +11,7 @@
   $SQL = "INSERT INTO pagos(id, transaccion, folio, fechaLimPago, Importe, TipoPago, FechayHora, CodigoBarras) VALUES('$id', '$transaccion', '$folio', '$fechaLimPago', '$Importe', '$TipoPago', '$FechayHora', '$CodigoBarras');";
   $host = "localhost";
   $username = "root";
-  $password = "";
+  $password = "sistemas-internet31";
   $database = "controlvehicular31";
 
   $conn = mysqli_connect($host, $username, $password, $database);
