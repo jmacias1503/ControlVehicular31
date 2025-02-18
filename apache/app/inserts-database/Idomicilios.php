@@ -14,7 +14,7 @@
   $password = "sistemas-internet31";
   $database = "controlvehicular31";
 
-  $conn = new msqli($host, $username, $password, $database);
+  $conn = new mysqli($host, $username, $password, $database);
 
   $resultSet = mysqli_query($SQL);
   mysqli_close($conn);
