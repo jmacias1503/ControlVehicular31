@@ -20,7 +20,7 @@
     $SQL = "INSERT INTO personas VALUES('$CURP','$Nombre','$ApellidoP','$ApellidoM','$FechaNac','$Sexo','$Firma');"; 
     //print($SQL);
 
-    $servername = "localhost";
+    $servername = "db";
     $username = "root";
     $password = "sistemas-internet31";
     $dbname = "controlvehicular31";

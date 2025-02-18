@@ -11,7 +11,7 @@
     //print($SQL);  
 
     //Connection details
-    $servername = "localhost";
+    $servername = "db";
     $username = "root";
     $password = "sistemas-internet31";
     $dbname = "controlvehicular31";

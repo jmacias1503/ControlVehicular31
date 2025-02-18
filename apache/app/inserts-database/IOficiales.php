@@ -10,7 +10,7 @@
     $SQL = "INSERT INTO oficiales VALUES('$id','$numero_placa','$curp');";
     //print($SQL); 
     //Envio al sistema manejador de base de datos
-    $servername = "localhost";
+    $servername = "db";
     $username = "root";
     $password = "sistemas-internet31";
     $dbname = "controlvehicular31";

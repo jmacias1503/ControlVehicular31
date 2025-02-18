@@ -3,7 +3,7 @@
   $CURP = $_GET['CURP'];
 
   $SQL = "INSERT INTO propietarios(IdPropietario, CURP) VALUES('$IdPropietario', '$CURP');";
-  $host = "localhost";
+  $host = "db";
   $username = "root";
   $password = "sistemas-internet31";
   $database = "controlvehicular31";

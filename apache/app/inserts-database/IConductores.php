@@ -8,7 +8,7 @@
     $SQL = "INSERT INTO conductores VALUES('$idConductor','$CURP');";
     //print($SQL);
 
-    $servername = "localhost";
+    $servername = "db";
     $username = "root";
     $password = "sistemas-internet31";
     $dbname = "controlvehicular31";

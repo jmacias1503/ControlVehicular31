@@ -9,7 +9,7 @@
   $CodigoBarras = $_POST['CodigoBarras'];
 
   $SQL = "INSERT INTO pagos(id, transaccion, folio, fechaLimPago, Importe, TipoPago, FechayHora, CodigoBarras) VALUES('$id', '$transaccion', '$folio', '$fechaLimPago', '$Importe', '$TipoPago', '$FechayHora', '$CodigoBarras');";
-  $host = "localhost";
+  $host = "db";
   $username = "root";
   $password = "sistemas-internet31";
   $database = "controlvehicular31";

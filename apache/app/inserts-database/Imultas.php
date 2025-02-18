@@ -15,7 +15,7 @@
   $FechaHora = $_REQUEST['FechaHora'];
 
   $SQL = "INSERT INTO multas(FolioMultas, IdPago, FolioVerificacion, FolioCirculacion, IdSerie, IdOficial, Causa, Observaciones, Region, FechaExp, Estado, Descripcion, Tipo, FechaHora) VALUES('$FolioMultas', '$IdPago', '$FolioVerificacion', '$FolioCirculacion', '$IdSerie', '$IdOficial', '$Causa', '$Observaciones', '$Region', '$FechaExp', '$Estado', '$Descripcion', '$Tipo', '$FechaHora');";
-  $host = "localhost";
+  $host = "db";
   $username = "root";
   $password = "sistemas-internet31";
   $database = "controlvehicular31";

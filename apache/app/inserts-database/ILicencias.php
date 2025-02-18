@@ -20,7 +20,7 @@
     $SQL = "INSERT INTO licencias VALUES('$IdLicencia','$ValidoHasta','$Antiguedad','$Restriccion','$NumEmergencia','$DonadorOrganos','$FechaExp','$IdConductor');";
     //print($SQL);
     
-    $servername = "localhost";
+    $servername = "db";
     $username = "root";
     $password = "sistemas-internet31";
     $dbname = "controlvehicular31";

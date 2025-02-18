@@ -9,7 +9,7 @@
   $Calle = $_GET['Calle'];
 
   $SQL = "INSERT INTO domicilios(IdDomicilio, NumInt, NumExt, CP, Estado, Ciudad, Colonia, Calle) VALUES('$IdDomicilio', '$NumInt', '$NumExt', '$CP', '$Estado', '$Ciudad', '$Colonia', '$Calle');";
-  $host = "localhost";
+  $host = "db";
   $username = "root";
   $password = "sistemas-internet31";
   $database = "controlvehicular31";

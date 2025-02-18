@@ -12,7 +12,7 @@
   $IdPago = $_GET['IdPago'];
 
   $SQL = "INSERT INTO tarjetas_verificacion(FolioVerificacion, HoraSalida, MotivoVerificacion, FolioCertificado, Semestre, TipoServicio, FechaExp, HoraEntrada, IdCentro, IdSerie, IdPago) VALUES('$FolioVerificacion', '$HoraSalida', '$MotivoVerificacion', '$FolioCertificado', '$Semestre', '$TipoServicio', '$FechaExp', '$HoraEntrada', '$IdCentro', '$IdSerie', '$IdPago');";
-  $host = "localhost";
+  $host = "db";
   $username = "root";
   $password = "sistemas-internet31";
   $database = "controlvehicular31";
