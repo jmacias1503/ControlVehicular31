@@ -22,9 +22,6 @@
 
   $conn = mysqli_connect($host, $username, $password, $database);
 
-  if ($conn == 0) {
-    print("No se pudo conectar a la base de datos");
-  }
   $resultSet = mysqli_query($conn, $SQL);
   mysqli_close($conn);
   if ($resultSet == 1){
