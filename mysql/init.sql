@@ -531,6 +531,13 @@ INSERT INTO caso_domicilios(compuesta, CURP, IdDomicilio)
     WHERE compuesta = 'FAKE000000HAKEFAK31'
   );
 
+INSERT INTO oficiales(id, numero_placa, curp)
+  SELECT 1, 0, 'FAKE000000HAKEFAK31'
+  WHERE NOT EXISTS(
+    SELECT 1 FROM oficiales
+    WHERE IdOficial = 1
+  );
+
 INSERT INTO propietarios(IdPropietario, CURP)
   SELECT 1, 'FAKE000000HAKEFAK3'
   WHERE NOT EXISTS(
