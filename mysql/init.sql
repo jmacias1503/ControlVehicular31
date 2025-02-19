@@ -503,4 +503,88 @@ ALTER TABLE `tarjetas_verificacion`
 ALTER TABLE `vehiculos`
   ADD CONSTRAINT `vehiculos_ibfk_1` FOREIGN KEY (`FolioCirculacion`) REFERENCES `tarjetas_circulacion` (`FolioCirculacion`),
   ADD CONSTRAINT `vehiculos_ibfk_2` FOREIGN KEY (`IdPropietario`) REFERENCES `propietarios` (`IdPropietario`);
+
+INSERT INTO personas(CURP, Nombre, ApellidoP, ApellidoM, FechaNac, Sexo, Firma)
+  SELECT 'FAKE000000HAKEFAK3', 'DUMMY', 'DUMMY', 'DUMMY', '0000-00-00', 0, 'dummy'
+  WHERE NOT EXISTS(
+    SELECT 1 FROM personas
+    WHERE CURP = 'FAKE000000HAKEFAK3'
+  );
+INSERT INTO domicilios(IdDomicilio, NumInt, NumExt, CP, Estado, Ciudad, Colonia, Calle)
+  SELECT 1, '0', '0', '00000', 'DUMMY', 'DUMMY', 'DUMMY', 'DUMMY'
+  WHERE NOT EXISTS(
+    SELECT 1 FROM domicilios
+    WHERE IdDomicilio = 1
+  );
+
+INSERT INTO pagos(id, transaccion, folio, fechaLimPago, Importe, TipoPago, FechayHora, CodigoBarras)
+  SELECT 1, 'DUMMY', 0, '0000-00-00', '0', 'DUMMY', '2025-01-01 00:00', 'DUMMY'
+  WHERE NOT EXISTS(
+    SELECT 1 FROM pagos
+    WHERE id = 1
+  );
+
+INSERT INTO caso_domicilios(compuesta, CURP, IdDomicilio)
+  SELECT 'FAKE000000HAKEFAK31', 'FAKE000000HAKEFAK3', 1
+  WHERE NOT EXISTS(
+    SELECT 1 FROM caso_domicilios
+    WHERE compuesta = 'FAKE000000HAKEFAK31'
+  );
+
+INSERT INTO propietarios(IdPropietario, CURP)
+  SELECT 1, 'FAKE000000HAKEFAK3'
+  WHERE NOT EXISTS(
+    SELECT 1 FROM propietarios
+    WHERE IdPropietario = 1
+  );
+
+INSERT INTO conductores(IdConductor, CURP)
+  SELECT 1, 'FAKE000000HAKEFAK3'
+  WHERE NOT EXISTS(
+    SELECT 1 FROM conductores
+    WHERE IdConductor = 1
+  );
+
+INSERT INTO licencias(IdLicencia, ValidoHasta, Antiguedad, Restriccion, NumEmergencia, DonadorOrganos, FechaExp, IdConductor)
+  SELECT 1, '0000-00-00', 0, 'DUMMY', 'DUMMY', 0, '0000-00-00', 1
+  WHERE NOT EXISTS(
+    SELECT 1 FROM licencias
+    WHERE IdLicencia = 1
+  );
+
+INSERT INTO tarjetas_circulacion(FolioCirculacion, IdPago, NumConstancia, Origen, CveVehicular, Tipo, Uso, RPA, Operacion, PlacaAnt, OficinaExpendidora, Movimiento, Vigencia)
+  SELECT 1, 1, 'DUMMY', 'DUMMY', 'DUMMY', 0, 0, 0, 'DUMMY', 'DUMMY', 0, 'DUMMY', 'DUMMY'
+  WHERE NOT EXISTS(
+    SELECT 1 FROM tarjetas_circulacion
+    WHERE FolioCirculacion = 1
+  );
+
+INSERT INTO `vehiculos` ( `IdSerie`, `FolioCirculacion`, `IdPropietario`, `Color`, `Ano`, `Clase`, `Combustible`, `NIV`, `NumCilindros`, `Modelo`, `Marca`)
+  SELECT 1, 1, 1, 'DUMMY', 0, 'DUMMY', 'DUMMY', 'YDUMMYDUMMYDUMMYD', 0, 'DUMMY', 'DUMMY'
+  WHERE NOT EXISTS(
+    SELECT 1 FROM vehiculos
+    WHERE IdSerie = 1
+  );
+INSERT INTO centros_verificacion(IdCentro, IdDomicilio, Nombre)
+  SELECT 1, 1, 'DUMMY'
+  WHERE NOT EXISTS(
+    SELECT 1 FROM centros_verificacion
+    WHERE IdCentro = 1
+  );
+
+INSERT INTO tarjetas_verificacion(FolioVerificacion, MotivoVerificacion,  Semestre, FechaExp, IdCentro, IdSerie, IdPago)
+  SELECT 1, 'DUMMY', 0, '0000-00-00', 1, 1, 1
+  WHERE NOT EXISTS(
+    SELECT 1 FROM tarjetas_verificacion
+    WHERE FolioVerificacion = 1
+  );
+
+INSERT INTO multas(FolioMultas, IdPago, FolioVerificacion, FolioCirculacion, IdSerie, IdOficial, Causa, Region, FechaExp, Estado, Tipo)
+  SELECT 1, 1, 1, 1, 1, 1, 'DUMMY', 'DUMMY', '0000-00-00', 'DUMMY', 'DUMMY'
+  WHERE NOT EXISTS(
+    SELECT 1 FROM multas
+    WHERE FolioMultas = 1
+  );
+
+
 COMMIT;
