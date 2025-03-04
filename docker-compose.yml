@@ -4,7 +4,7 @@ services:
     container_name: mysql_container
     environment:
       MYSQL_ROOT_PASSWORD: sistemas-internet31
-      MYSQL_DATABASE: controlvehicular
+      MYSQL_DATABASE: controlvehicular31
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
     ports:
