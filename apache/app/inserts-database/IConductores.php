@@ -1,4 +1,5 @@
 <?php
+  include("../controller.php");
     $idConductor = $_POST['idConductor'];
     $CURP = $_POST['CURP'];
     /*
@@ -8,15 +9,10 @@
     $SQL = "INSERT INTO conductores VALUES('$idConductor','$CURP');";
     //print($SQL);
 
-    $servername = "db";
-    $username = "root";
-    $password = "sistemas-internet31";
-    $dbname = "controlvehicular31";
+    $conn = connect(); // Create connection
 
-    $conn = new mysqli($servername, $username, $password, $dbname); // Create connection
-
-    $ResultSet = mysqli_query($conn, $SQL); // Execute the query
-    mysqli_close($conn); // Close the connection
+    $ResultSet = execute($conn, $SQL); // Execute the query
+    $exit = close($conn); // Close the connection
     if($ResultSet == 1){
         print("Actualizado correctamente"); //Process the result
     }

@@ -1,4 +1,5 @@
 <?php
+include("../controller.php")
   $IdDomicilio = $_GET['IdDomicilio'];
   $NumInt = $_GET['NumInt'];
   $NumExt = $_GET['NumExt'];
@@ -9,15 +10,10 @@
   $Calle = $_GET['Calle'];
 
   $SQL = "INSERT INTO domicilios(IdDomicilio, NumInt, NumExt, CP, Estado, Ciudad, Colonia, Calle) VALUES('$IdDomicilio', '$NumInt', '$NumExt', '$CP', '$Estado', '$Ciudad', '$Colonia', '$Calle');";
-  $host = "db";
-  $username = "root";
-  $password = "sistemas-internet31";
-  $database = "controlvehicular31";
+  $conn = connect();
 
-  $conn = new mysqli($host, $username, $password, $database);
-
-  $resultSet = mysqli_query($conn, $SQL);
-  mysqli_close($conn);
+  $resultSet = execute($conn, $SQL);
+  $exit = close($conn);
   if ($resultSet == 1){
     print("Consulta realizada correctamente");
   }

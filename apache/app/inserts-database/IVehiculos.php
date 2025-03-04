@@ -1,4 +1,5 @@
 <?php
+  include("../controller.php")
     $IdSerie = $_REQUEST['IdSerie'];
     $FolioCirculacion = $_REQUEST['FolioCirculacion'];
     $IdPropietario = $_REQUEST['IdPropietario'];
@@ -27,15 +28,10 @@
     $SQL = "INSERT INTO vehiculos VALUES('$IdSerie','$FolioCirculacion','$IdPropietario','$Color','$Ano','$Clase','$Combustible','$NIV','$NumCilindros','$Modelo','$Marca');";
 
     //print($SQL);
-    $servername = "db";
-    $username = "root";
-    $password = "sistemas-internet31";
-    $dbname = "controlvehicular31";
+    $conn = connect(); // Create connection
 
-    $conn = new mysqli($servername, $username, $password, $dbname); // Create connection
-
-    $ResultSet = mysqli_query($conn, $SQL); // Execute the query
-    mysqli_close($conn); // Close the connection
+    $ResultSet = execute($conn, $SQL); // Execute the query
+    $exit = close($conn); // Close the connection
     if($ResultSet == 1){
         print("Actualizado correctamente"); //Process the result
     }

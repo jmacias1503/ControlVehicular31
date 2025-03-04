@@ -1,4 +1,5 @@
 <?php
+  include("../controller.php")
     $id = $_REQUEST['id'];
     $numero_placa = $_REQUEST['numero_placa'];
     $curp = $_REQUEST['curp'];
@@ -10,15 +11,10 @@
     $SQL = "INSERT INTO oficiales VALUES('$id','$numero_placa','$curp');";
     //print($SQL); 
     //Envio al sistema manejador de base de datos
-    $servername = "db";
-    $username = "root";
-    $password = "sistemas-internet31";
-    $dbname = "controlvehicular31";
+    $conn = connect(); // Create connection
 
-    $conn = new mysqli($servername, $username, $password, $dbname); // Create connection
-
-    $ResultSet = mysqli_query($conn, $SQL); // Execute the query
-    mysqli_close($conn); // Close the connection
+    $ResultSet = execute($conn, $SQL); // Execute the query
+    $exit = close($conn); // Close the connection
     if($ResultSet == 1){
         print("Actualizado correctamente"); //Process the result
     }

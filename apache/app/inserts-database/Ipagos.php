@@ -1,4 +1,5 @@
 <?php
+  include("../controller.php")
   $id = $_POST['id'];
   $transaccion = $_POST['transaccion'];
   $folio = $_POST['folio'];
@@ -9,15 +10,10 @@
   $CodigoBarras = $_POST['CodigoBarras'];
 
   $SQL = "INSERT INTO pagos(id, transaccion, folio, fechaLimPago, Importe, TipoPago, FechayHora, CodigoBarras) VALUES('$id', '$transaccion', '$folio', '$fechaLimPago', '$Importe', '$TipoPago', '$FechayHora', '$CodigoBarras');";
-  $host = "db";
-  $username = "root";
-  $password = "sistemas-internet31";
-  $database = "controlvehicular31";
+  $conn = connect();
 
-  $conn = new mysqli($host, $username, $password, $database);
-
-  $resultSet = mysqli_query($conn, $SQL);
-  mysqli_close($conn);
+  $resultSet = execute($conn, $SQL);
+  $exit = close($conn);
   if ($resultSet == 1){
     print("Consulta realizada correctamente");
   }

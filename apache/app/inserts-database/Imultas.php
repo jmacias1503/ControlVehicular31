@@ -1,4 +1,5 @@
 <?php
+include("../controller.php")
   $FolioMultas = $_REQUEST['FolioMultas'];
   $IdPago = $_REQUEST['IdPago'];
   $FolioVerificacion = $_REQUEST['FolioVerificacion'];
@@ -15,15 +16,10 @@
   $FechaHora = $_REQUEST['FechaHora'];
 
   $SQL = "INSERT INTO multas(FolioMultas, IdPago, FolioVerificacion, FolioCirculacion, IdSerie, IdOficial, Causa, Observaciones, Region, FechaExp, Estado, Descripcion, Tipo, FechaHora) VALUES('$FolioMultas', '$IdPago', '$FolioVerificacion', '$FolioCirculacion', '$IdSerie', '$IdOficial', '$Causa', '$Observaciones', '$Region', '$FechaExp', '$Estado', '$Descripcion', '$Tipo', '$FechaHora');";
-  $host = "db";
-  $username = "root";
-  $password = "sistemas-internet31";
-  $database = "controlvehicular31";
+  $conn = connect();
 
-  $conn = mysqli_connect($host, $username, $password, $database);
-
-  $resultSet = mysqli_query($conn, $SQL);
-  mysqli_close($conn);
+  $resultSet = execute($conn, $SQL);
+  $exit = close($conn);
   if ($resultSet == 1){
     print("Consulta realizada correctamente");
   }

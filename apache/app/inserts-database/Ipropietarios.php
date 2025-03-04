@@ -1,17 +1,13 @@
 <?php
+  include("../controller.php")
   $IdPropietario = $_GET['IdPropietario'];
   $CURP = $_GET['CURP'];
 
   $SQL = "INSERT INTO propietarios(IdPropietario, CURP) VALUES('$IdPropietario', '$CURP');";
-  $host = "db";
-  $username = "root";
-  $password = "sistemas-internet31";
-  $database = "controlvehicular31";
+  $conn = connect();
 
-  $conn = new mysqli($host, $username, $password, $database);
-
-  $resultSet = mysqli_query($conn, $SQL);
-  mysqli_close($conn);
+  $resultSet = execute($conn, $SQL);
+  $exit = close($conn);
   if ($resultSet == 1){
     print("Consulta realizada correctamente");
   }
