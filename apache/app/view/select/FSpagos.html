@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <label>Pagos</label>
+  <form action="../../model/select/Spagos.php">
+    <label>Criterio</label>
+    <input type="text" name="criterio" id="criterio" required>
+    <br>
+    <label>Atributo</label>
+    <select name="atributo" id="atributo" required>
+      <option value="id">ID</option>
+      <option value="transaccion">Transacción</option>
+      <option value="folio">Folio</option>
+      <option value="fechaLimPago">Fecha Límite de Pago</option>
+      <option value="Importe">Importe</option>
+      <option value="TipoPago">Tipo de Pago</option>
+      <option value="FechayHora">Fecha y Hora</option>
+      <option value="CodigoBarras">Código de Barras</option>
+    </select>
+    <br>
+    <label>Submit</label>
+    <input type="submit">
+  </form>
+</html>
