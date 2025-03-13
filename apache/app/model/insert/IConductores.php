@@ -1,5 +1,5 @@
 <?php
-  include("../controller.php");
+  include("../../controller.php");
     $idConductor = $_POST['idConductor'];
     $CURP = $_POST['CURP'];
     /*
