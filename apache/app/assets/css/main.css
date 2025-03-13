@@ -25,3 +25,7 @@ h5{
 h6{
 	font-size: 16pt;
 }
+main{
+	max-width: 900px;
+	margin: auto;
+}
