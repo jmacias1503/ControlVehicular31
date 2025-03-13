@@ -29,3 +29,17 @@ main{
 	max-width: 900px;
 	margin: auto;
 }
+footer{
+	max-width: 900px;
+	margin: auto;
+}
+a:link {
+	color: powderblue;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:visited {
+	color: rgb(189,189,189);
+}
