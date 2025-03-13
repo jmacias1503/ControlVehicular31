@@ -1,16 +1,16 @@
 <?php
-include("../controller.php");
-    $CURP = $_REQUEST['CURP'];
+  include("../../controller.php");
+    $IdSerie = $_REQUEST['IdSerie'];
 
-    $SQL = "DELETE FROM personas WHERE CURP = '$CURP'"; 
+    $SQL = "DELETE FROM vehiculos WHERE IdSerie = '$IdSerie'";
+
     //print($SQL);
-
     $conn = connect(); // Create connection
 
     $ResultSet = execute($conn, $SQL); // Execute the query
     $exit = close($conn); // Close the connection
     if(mysqli_affected_rows($ResultSet) == 0){
-        print("Ninguna fila eliminada"); //Process the result
+        print("Ninguna fila afectada"); //Process the result
     }
     else{
         print("Fila eliminada correctamente");

@@ -1,8 +1,8 @@
 <?php
-  include("../controller.php");
-  $FolioVerificacion = $_GET['FolioVerificacion'];
+  include("../../controller.php");
+  $IdPropietario = $_GET['IdPropietario'];
 
-  $SQL = "DELETE FROM Tarjetas_verificacion WHERE FolioVerificacion = '$FolioVerificacion'";
+  $SQL = "DELETE FROM propietarios WHERE IdPropietario = '$IdPropietario'";
   $conn = connect();
 
   $resultSet = execute($conn, $SQL);

@@ -1,8 +1,8 @@
 <?php
-include("../controller.php");
-  $IdDomicilio = $_GET['IdDomicilio'];
+  include("../../controller.php");
+  $idCentro = $_POST['IdCentro'];
+  $SQL = "DELETE FROM centros_verificacion WHERE idCentro = '$idCentro'";
 
-  $SQL = "DELETE FROM domicilios WHERE idDomicilio = '$IdDomicilio'";
   $conn = connect();
 
   $resultSet = execute($conn, $SQL);

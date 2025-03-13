@@ -1,8 +1,8 @@
 <?php
-include("../controller.php");
-  $FolioMultas = $_REQUEST['FolioMultas'];
+  include("../../controller.php");
+  $id = $_POST['id'];
 
-  $SQL = "DELETE FROM multas WHERE FolioMultas = '$FolioMultas'";
+  $SQL = "DELETE FROM pagos WHERE id = '$id'";
   $conn = connect();
 
   $resultSet = execute($conn, $SQL);

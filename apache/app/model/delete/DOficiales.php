@@ -1,10 +1,10 @@
 <?php
-include("../controller.php");
-    $IdLicencia = $_REQUEST['IdLicencia'];
+  include("../../controller.php");
+    $id = $_REQUEST['id'];
 
-    $SQL = "DELETE FROM licencias WHERE idLicencia = '$IdLicencia'";
-    //print($SQL);
-    
+    $SQL = "DELETE FROM oficiales WHERE id = '$id'";
+    //print($SQL); 
+    //Envio al sistema manejador de base de datos
     $conn = connect(); // Create connection
 
     $ResultSet = execute($conn, $SQL); // Execute the query
@@ -14,5 +14,5 @@ include("../controller.php");
     }
     else{
         print("Fila eliminada correctamente");
-    }
+    } 
 ?>

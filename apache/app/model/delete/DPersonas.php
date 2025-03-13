@@ -1,8 +1,8 @@
 <?php
-  include("../controller.php");
-    $idConductor = $_POST['idConductor'];
+include("../../controller.php");
+    $CURP = $_REQUEST['CURP'];
 
-    $SQL = "DELETE FROM conductores WHERE idConductor = '$idConductor'";
+    $SQL = "DELETE FROM personas WHERE CURP = '$CURP'"; 
     //print($SQL);
 
     $conn = connect(); // Create connection
