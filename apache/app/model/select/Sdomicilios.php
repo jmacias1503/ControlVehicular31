@@ -1,16 +1,25 @@
 <?php
-include("../controller.php");
-  $IdDomicilio = $_GET['IdDomicilio'];
+include("../../controller.php");
+$criterio = $_REQUEST['criterio'];
+$atributo = $_REQUEST['atributo'];
+$SQL = "SELECT * FROM domicilios WHERE $atributo LIKE '%$criterio%';";
 
-  $SQL = "DELETE FROM domicilios WHERE idDomicilio = '$IdDomicilio'";
-  $conn = connect();
+$conn = connect();
 
-  $resultSet = execute($conn, $SQL);
-  $exit = close($conn);
-  if (mysqli_affected_rows($resultSet) == 0){
-    print("Ninguna fila eliminada");
+$resultSet = execute($conn, $SQL);
+$rows = mysqli_num_rows($resultSet);
+$columns = mysqli_field_count($conn);
+print("<table>");
+print("<tr> <th>ID Domicilio</th> <th>Número Interior</th> <th>Número Exterior</th> <th>Código Postal</th> <th>Estado</th> <th>Ciudad</th> <th>Colonia</th> <th>Calle</th> </tr>");
+for($i=0;$i<$rows;$i++){
+  print("<tr>");
+  $selection=mysqli_fetch_row($resultSet);
+  for($j=0;$j<$columns;$j++){
+    print("<td>$selection[$j]</td>");
   }
-  else{
-    print("Fila eliminada correctamente");
-  }
+  print("</tr>");
+}
+print("</table>");
+print("<p>Registers fetched: $rows</p>");
+$exit = close($conn);
 ?>
