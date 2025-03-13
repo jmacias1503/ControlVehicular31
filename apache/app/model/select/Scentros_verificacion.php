@@ -13,7 +13,7 @@ print("<table>");
 print("<tr> <th>ID Compuesta</th> <th>CURP</th> <th>ID Domicilio</th> </tr>");
 for($i=0;$i<$rows;$i++){
   print("<tr>");
-  $selection=mysqli_fetch_row($ResultSet);
+  $selection=mysqli_fetch_row($resultSet);
   for($j=0;$j<$columns;$j++){
     print("<td>$selection[$j]</td>");
   }
