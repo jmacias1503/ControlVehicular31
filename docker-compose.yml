@@ -16,7 +16,7 @@ services:
 
   web:
     build: ./apache
-    container_name: apache_container
+    container_name: control_vehicular
     ports:
       - "8000:80"
     depends_on:
