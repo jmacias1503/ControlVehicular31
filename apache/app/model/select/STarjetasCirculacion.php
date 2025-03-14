@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../assets/css/tables.css">
 </head>
+<body>
 <main>
+<table>
 <?php
 include("../../controller.php");
 $criterio = $_REQUEST['criterio'];
@@ -17,7 +19,6 @@ $conn = connect();
 $resultSet = execute($conn, $SQL);
 $rows = mysqli_num_rows($resultSet);
 $columns = mysqli_field_count($conn);
-print("<table>");
 print("<tr> <th>Folio Circulación</th> <th>ID Pago</th> <th>Número de Constancia</th> <th>Origen</th> <th>Clave Vehicular</th> <th>Tipo</th> <th>Uso</th> <th>RPA</th> <th>Operación</th> <th>Placa Anterior</th> <th>Oficina Expendidora</th> <th>Movimiento</th> <th>Vigencia</th> </tr>");
 for($i=0;$i<$rows;$i++){
   print("<tr>");
@@ -27,9 +28,14 @@ for($i=0;$i<$rows;$i++){
   }
   print("</tr>");
 }
-print("</table>");
 print("<p>Registers fetched: $rows</p>");
 $exit = close($conn);
 ?>
+</table>
 </main>
+  <footer>
+    <span>325724, Alejandro Macías Fonseca</span>
+    <span>Grupo 31</span>
+  </footer>
+</body>
 </html>
