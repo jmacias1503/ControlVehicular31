@@ -1,3 +1,11 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../assets/css/tables.css">
+</head>
+<main>
 <?php
 include("../../controller.php");
 $criterio = $_REQUEST['criterio'];
@@ -23,3 +31,5 @@ print("</table>");
 print("<p>Registers fetched: $rows</p>");
 $exit = close($conn);
 ?>
+</main>
+</html>
