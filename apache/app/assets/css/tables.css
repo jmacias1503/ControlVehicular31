@@ -18,3 +18,7 @@ table {
 table, th, td {
   border: 1px solid whitesmoke;
 }
+td {
+  padding: 8px;
+  text-align: left;
+}
