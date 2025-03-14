@@ -14,11 +14,33 @@ footer{
 }
 table {
   width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #2d2d2d;
+  color: whitesmoke;
 }
-table, th, td {
-  border: 1px solid whitesmoke;
-}
-td {
-  padding: 8px;
+
+th, td {
+  padding: 12px;
   text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+th {
+  background-color: #3d3d3d;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+tr:hover {
+  background-color: #3d3d3d;
+}
+
+td:first-child {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+tr:last-child td {
+  border-bottom: none;
 }
