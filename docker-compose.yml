@@ -18,7 +18,7 @@ services:
     build: ./apache
     container_name: apache_container
     ports:
-      - "8080:80"
+      - "8000:80"
     depends_on:
       - db
     networks:
