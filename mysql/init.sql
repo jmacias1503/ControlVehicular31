@@ -22,6 +22,15 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `caso_domicilios`
 --
 
+CREATE TABLE IF NOT EXISTS `usuarios`(
+  `username` VARCHAR(50) NOT NULL PRIMARY KEY,
+  `password` VARCHAR(20) NOT NULL,
+  `user_type` CHAR(1),
+  `status` BOOLEAN,
+  `block` BOOLEAN,
+  `tries` TINYINT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 CREATE TABLE IF NOT EXISTS `caso_domicilios` (
   `compuesta` varchar(250) NOT NULL,
   `CURP` char(18) NOT NULL,
@@ -503,6 +512,12 @@ ALTER TABLE `tarjetas_verificacion`
 ALTER TABLE `vehiculos`
   ADD CONSTRAINT `vehiculos_ibfk_1` FOREIGN KEY (`FolioCirculacion`) REFERENCES `tarjetas_circulacion` (`FolioCirculacion`),
   ADD CONSTRAINT `vehiculos_ibfk_2` FOREIGN KEY (`IdPropietario`) REFERENCES `propietarios` (`IdPropietario`);
+
+INSERT INTO usuarios VALUES('JUAN', 'J1234', 'A', '1', '0', '0');
+INSERT INTO usuarios VALUES('LUIS', 'L1234', 'U', '1', '0', '0');
+INSERT INTO usuarios VALUES('MARIA', 'M1234', 'A', '1', '1', '0');
+INSERT INTO usuarios VALUES('PEDRO', 'P1234', 'U', '1', '1', '0');
+INSERT INTO usuarios VALUES('SAUL', 'S1234', 'U', '0', '1', '0');
 
 INSERT INTO personas(CURP, Nombre, ApellidoP, ApellidoM, FechaNac, Sexo, Firma)
   SELECT 'FAKE000000HAKEFAK3', 'DUMMY', 'DUMMY', 'DUMMY', '0000-00-00', 0, 'dummy'
