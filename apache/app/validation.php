@@ -12,9 +12,9 @@
     print("Usuario no existente");
   } else {
     print("Usuario valido. Entrando como ");
-    if(row[2] == 'A'){
+    if($row[2] == 'A'){
       print("administrador");
-    } else if(row[2] == 'U'){
+    } else if($row[2] == 'U'){
       print("usuario");
     }
   }
