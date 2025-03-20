@@ -35,6 +35,17 @@ input[type="date"] {
     font-size: 12pt;
     font-family: sans-serif;
 }
+input[type="password"] {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 4px;
+    border: 1px solid #444;
+    border-radius: 2px;
+    background-color: #3d3d3d;
+    color: whitesmoke;
+    font-size: 12pt;
+    font-family: sans-serif;
+}
 
 input[type="date"]:focus {
     border-color: #666;
