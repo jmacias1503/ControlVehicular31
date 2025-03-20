@@ -45,6 +45,7 @@ input[type="email"],
 input[type="number"],
 input[type="date"],
 input[type="datetime"],
+input[type="password"],
 select,
 textarea {
   width: 100%;
