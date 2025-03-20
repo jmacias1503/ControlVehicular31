@@ -8,8 +8,9 @@
   $resultSet=execute($conn, $SQL);
   $num_rows=mysqli_num_rows($resultSet);
   $row=mysqli_fetch_row($resultSet);
+  $exit=close($conn);
   if($num_rows == 0){
-    print("Usuario no existente");
+    print("Usuario no valido");
   } else {
     print("Usuario valido. Entrando como ");
     if($row[2] == 'A'){
