@@ -38,17 +38,15 @@ if($row[1] != $password) {
   $exit=close($conn);
   exit();
 } 
+$exit=close($conn);
 print("Usuario valido. Entrando como ");
 if($row[2] == 'A'){
   print("administrador");
   header("Location: ./menu-administrador.html");
-  $exit=close($conn);
   exit();
 } else if($row[2] == 'U'){
   print("usuario");
   header("Location: ./menu-menu-usuario.html");
-  $exit=close($conn);
   exit();
 }
-$exit=close($conn);
 ?>
