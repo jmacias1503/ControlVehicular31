@@ -25,7 +25,8 @@ if($row[1] != $password) {
   execute($conn, $updateTries);
   $resultSet=execute($conn, $SQL);
   $row=mysqli_fetch_row($resultSet);
-  print("Contraseña incorrecta. Intentos restantes, ".4 - $row[5]."<br>");
+  $tries = 4 - $row[5];
+  print("Contraseña incorrecta. Intentos restantes, $tries<br>");
   if ($row[5] > 3) {
     $blockAccount = "UPDATE usuarios SET block = TRUE, SET tries = 0 WHERE username = $username;";
     execute($conn, $blockAccount);
