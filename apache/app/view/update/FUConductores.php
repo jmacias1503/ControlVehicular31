@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<HTML>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/forms.css">
+  </head>
+  <body>
+    <main>
+	<label>Conductores</label>
+	<form action="../../model/update/UConductores.php">
+		<label>idConductor</label>
+		<input type="number" name="idConductor" id="idConductor" required maxlength="11">
+		<label>CURP</label>
+		<input type="text" name="CURP" id="CURP" required="required" minlength="18" maxlength="18" pattern="[A-Z]{4}[0-9]{6}[HM]{1}[A-Z]{5}[A-Z0-9]{2}">
+		<label></label>
+        <input type = "submit">
+	</form> 
+    </main>
+    <footer>
+    </footer>
+  </body>
+</HTML>

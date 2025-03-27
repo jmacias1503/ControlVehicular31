@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang = "es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/forms.css">
+  </head>
+  <body>
+    <main>
+    <label>TarjetasCirculacion</label>
+    <form action = "../../model/update/UTarjetasCirculacion.php">
+        <label>FolioCirculacion</label>
+        <input type = "number" name="FolioCirculacion" id="FolioCirculacion" required maxlength="11">
+        <label>IdPago</label>
+        <input type = "number" name="IdPago" id="IdPago" required maxlength="11">
+        <label>NumConstancia</label>
+        <input type = "text" name = "NumConstancia" id = "NumConstancia" maxlength="30">
+        <label>Origen</label>
+        <input type ="text" name="Origen" id = "Origen" required maxlength="20">
+        <label>CveVehicular</label>
+        <input type="text" name = "CveVehicular" id = "CveVehicular" required maxlength="20">
+        <label>Tipo</label>
+        <input type="number" name = "Tipo"  id = "Tipo" required maxlength="4">
+        <label>Uso</label>
+        <input type = "number" name="Uso" id = "Uso" required maxlength="4">
+        <label>RPA</label>
+        <input type="number" name="RPA" id = "RPA" maxlength="4">
+        <label>Operacion</label>
+        <input type="text" name="Operacion" id = "Operacion" required maxlength="100">
+        <label>PlacaAnt</label>
+        <input type = "text" name="PlacaAnt" id = "PlacaAnt" maxlength="8">
+        <label>OficinaExpendidora</label>
+        <input type="number" name="OficinaExpendidora" id = "OficinaExpendidora" required maxlength="4">
+        <label>Movimiento</label>
+        <input type="text" name="Movimiento" id = "Movimiento" required maxlength="50">
+        <label>Vigencia</label>
+        <input type = "text" name="Vigencia" id = "Vigencia" maxlength="50">
+        <input type = "submit">
+    </form>
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>
